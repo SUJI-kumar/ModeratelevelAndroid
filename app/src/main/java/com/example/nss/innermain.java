@@ -53,12 +53,18 @@ public class innermain extends AppCompatActivity {
                 return true;
 
             case R.id.about:
-                lc.setBackgroundColor(Color.GREEN);
-                Toast.makeText(getApplicationContext(),"Item 2 selected",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Aboutus",Toast.LENGTH_SHORT).show();
+                Intent i2 = new Intent(getApplicationContext(), aboutus.class);
+                startActivity(i2);
                 return true;
             case R.id.help:
-                lc.setBackgroundColor(Color.YELLOW);
-                Toast.makeText(getApplicationContext(),"Item 3 selected",Toast.LENGTH_SHORT).show();
+                lc.setBackgroundColor(Color.RED);
+                data.setText("COVID19 Helpline Number\t1950\n" +
+                        "Police Control Room\t0124-2316100\n" +
+                        "SMS to Police Control Room\t0124100\n" +
+                        "Cyber Crime Cell\t0124-2211033\n" +
+                        "Traffic Helpline Numbers\t9213020404");
+                Toast.makeText(getApplicationContext(),"Help",Toast.LENGTH_SHORT).show();
                 return true;
             default:
 

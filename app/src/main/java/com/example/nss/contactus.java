@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -26,8 +27,9 @@ public class contactus extends AppCompatActivity implements AdapterView.OnItemSe
     String[] country={"India","America","Russia","Uk","Australia"};
     String[] Subject={" ","Volunteer","new member"};
     TextView mobile;
-    EditText number;
+    EditText number,name,email;
     LinearLayout ll;
+    Button btn;
 
 
     @Override
@@ -36,6 +38,24 @@ public class contactus extends AppCompatActivity implements AdapterView.OnItemSe
         setContentView(R.layout.activity_contactus);
         mobile=findViewById(R.id.mobile);
         number=findViewById(R.id.number);
+        name=findViewById(R.id.name);
+        email=findViewById(R.id.email);
+        btn=findViewById(R.id.submit);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String user=name.getText().toString();
+                String em=email.getText().toString();
+                if(user.trim().isEmpty() || em.trim().isEmpty())
+                {
+                    Toast.makeText(getApplicationContext(), "Fill the details", Toast.LENGTH_LONG).show();
+
+                }else
+                {
+                    Toast.makeText(getApplicationContext(), "Submitted", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
         ll=findViewById(R.id.Linearll);
         //contextmwnu adding
         registerForContextMenu(mobile);
